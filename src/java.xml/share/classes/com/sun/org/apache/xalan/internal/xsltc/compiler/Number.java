@@ -383,7 +383,7 @@ final class Number extends Instruction implements Closure {
         _className = getXSLTC().getHelperClassName();
         nodeCounterGen = new NodeCounterGenerator(_className,
                                                   ClassNames[_level],
-                                                  toString(),
+                                                  getClass().getName(), // Name of this node should be consistent across runs.
                                                   ACC_PUBLIC | ACC_SUPER,
                                                   null,
                                                   classGen.getStylesheet());
